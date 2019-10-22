@@ -23,4 +23,9 @@ public class PageController
 	{
 		return "ContactUs";
 	}
+	@RequestMapping("/home")
+	public String showHomePage()
+	{
+		return "Homepage";
+	}
 }

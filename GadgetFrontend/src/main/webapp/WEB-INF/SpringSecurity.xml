@@ -41,5 +41,6 @@
 	</security:authentication-provider>
 </security:authentication-manager>
 
+ <mvc:default-servlet-handler/>
 
 </beans:beans>

@@ -76,13 +76,12 @@ ul{
   <!--Search section-->
  
   <nav class="navbar navbar-light bg-light">
- 
-   <img src='<c:url value="WEB-INF/resources/images/logo.png"></c:url>' alt="Logo" height=200 width=300>
+   <img src='<c:url value="resources/images/logo_transparent.png"></c:url>' alt="Logo" height=200 width=300>
   <form class="form-inline" style="padding-right: 3rem">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
     <div style="padding-left: 1.2rem;"> </div>
-    <a class="btn btn-outline-info">Home</a>
+    <a href="home" class="btn btn-outline-info">Home</a>
      <div style="padding-left:0.8rem;"> </div>
     <a href="register" class="btn btn-outline-info">Register</a>
      <div style="padding-left:0.8rem;"> </div>
