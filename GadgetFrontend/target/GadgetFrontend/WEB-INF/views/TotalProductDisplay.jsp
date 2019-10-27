@@ -10,7 +10,7 @@
 				<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
 					<div class="product col-md-3 service-image-left">
 						<center>
-							<img id="item-display" src="<c:url value="/resources/images/${product.productId}.jpg"/>" alt=""></img>
+							<img id="item-display" src="<c:url value="/resources/images/${product.productId}.jpg"/>" alt="" width="320" height="320"></img>
 						</center>
 					</div>
 				</div>

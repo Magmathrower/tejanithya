@@ -146,6 +146,7 @@ public class ProductController
 		return "ProductDisplay";
 	}
 	
+	
 	@RequestMapping(value="/totalProductDisplay/{productId}")
 	public String totalProductDisplay(@PathVariable("productId")int productId,Model m)
 	{

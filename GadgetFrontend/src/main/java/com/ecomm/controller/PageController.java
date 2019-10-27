@@ -28,4 +28,34 @@ public class PageController
 	{
 		return "Homepage";
 	}
+	
+	@RequestMapping("/men")
+	public String showMenPage()
+	{
+		return "Men";
+	}
+	
+	@RequestMapping("/women")
+	public String showwomenPage()
+	{
+		return "Women";
+	}
+	
+	@RequestMapping("/kids")
+	public String showkidsPage()
+	{
+		return "Kids";
+	}
+	
+	@RequestMapping("/handf")
+	public String showhandfPage()
+	{
+		return "Handf";
+	}
+	
+	@RequestMapping("/electro")
+	public String showelectroPage()
+	{
+		return "Electro";
+	}
 }

@@ -78,7 +78,7 @@
                         </a></td>
                         <td>
                          <a href="<c:url value="/confirmOrder"/>" class="btn btn-default">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
+                            Order Confirm <span class="glyphicon glyphicon-play"></span>
                         </button></td>
                     </tr>
                 </tbody>

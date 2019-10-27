@@ -1,79 +1,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-
 <html>
 <head>
-	<title>AK</title>
+    <link rel="icon" href="resources/images/favicon.png">
+	<title>SHE & ME</title>
   <!--CSS CDN-->
+  <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/commonheader.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
-  
-  </script>
 </head>
 <body>
-
-  <style>
-  
-nav img{
-    height: 6rem;
-    width : 6rem;
-}
-
-  
-#table{
-	padding-top: 0.2rem;
-	padding-left: 1.2rem;
-}
-
-#space{
-    background-color: "white";
-}
-#just{
-	padding-bottom: 4rem;
-}
-#bot{
-
-}
-
-ul{
-        padding: 0;
-        list-style: none;
-        background: #fff;
-    }
-    ul li{
-        display: inline-block;
-        position: relative;
-        line-height: 21px;
-        text-align: center;
-    }
-    ul li a{
-        display: inline-block;
-        padding: 8px 25px;
-        color: #333;
-        text-decoration: none;
-    }
-    ul li a:hover{
-        color: #fff;
-        background: #56cfbe;
-    }
-    ul li ul.dropdown{
-        min-width: 100%; /* Set width of the dropdown */
-        background: #f2f2f2;
-        display: none;
-        position: absolute;
-        z-index: 999;
-        left: 0;
-    }
-    ul li:hover ul.dropdown{
-        display: block;	/* Display the dropdown */
-    }
-    
-   
-  
-  </style>
- 
-  <!--Search section-->
+ <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
  
   <nav class="navbar navbar-light bg-light">
    <img src='<c:url value="resources/images/logo_transparent.png"></c:url>' alt="Logo" height=200 width=300>
@@ -97,12 +35,28 @@ ul{
 
 <!--Selection Place-->
 <ul align="center"> 
-        <li><a href="#">MEN</a></li>
-        <li><a href="#">WOMEN</a></li>
-        <li><a href="#">KIDS</a></li>
-        <li><a href="#">HOME & FURNITURE</a></li>
-        <li><a href="#">ELECTRONICS</a></li>
+        <li><a href="men">MEN</a></li>
+        <li><a href="women">WOMEN</a></li>
+        <li><a href="kids">KIDS</a></li>
+        <li><a href="handf">HOME & FURNITURE</a></li>
+        <li><a href="electro">ELECTRONICS</a></li>
 </ul>
+
+<!-- Product Display -->
+
+<div class="container">
+	<div  class="row text-center text-lg-left">
+	<c:forEach items="${productList}" var="product">
+		<div class="col-md-3 col-sm-4 col-xs-12">
+			<a href="<c:url value="/totalProductDisplay/${product.productId}"/>" class="d-block mb-4 h-100">
+			<img class="img-fluid img-thumbnail" src="<c:url value="/resources/images/${product.productId}.jpg"/>" />
+			<p>Price :${product.price}</p>
+			<p>Stock :${product.stock}</p>
+			</a>
+		</div>
+	</c:forEach>
+	</div>
+</div>
      
 <!--Bootstrap JS CDN-->
 

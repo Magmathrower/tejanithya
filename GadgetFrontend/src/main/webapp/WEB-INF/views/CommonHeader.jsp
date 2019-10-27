@@ -3,7 +3,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="icon" href="resources/images/favicon.png">
+<title>SHE & ME</title>
 
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -17,7 +18,7 @@
 <div class="container">
 <nav class="navbar navbar-light bg-light">  
         <ul>
-      <img src='<c:url value="/resources/images/logo_transparent.png"></c:url>' alt="Logo" height=200 width=300>
+     <li><img src='<c:url value="/resources/images/logo_transparent.png"></c:url>' alt="Logo" height=200 width=300> </li> 
 
     <li class="active"><a href="home">Home</a></li>
     <c:if test="${!sessionScope.loggedIn}">	
@@ -49,3 +50,4 @@
      </span>
 	</ul>
 </nav>
+</div>
