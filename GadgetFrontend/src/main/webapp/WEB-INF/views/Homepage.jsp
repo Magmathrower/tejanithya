@@ -1,19 +1,23 @@
+<%@ page language="java" contentType="text/html"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+ <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link rel="icon" href="resources/images/favicon.png">
 	<title>SHE & ME</title>
   <!--CSS CDN-->
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/commonheader.css"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 </head>
+
 <body>
- <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
- 
-  <nav class="navbar navbar-light bg-light">
+   
+     <nav class="navbar navbar-light bg-light">
    <img src='<c:url value="resources/images/logo_transparent.png"></c:url>' alt="Logo" height=200 width=300>
   <form class="form-inline" style="padding-right: 3rem">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -34,29 +38,31 @@
 
 
 <!--Selection Place-->
-<ul align="center"> 
+<ul class="wrapper"> 
         <li><a href="men">MEN</a></li>
         <li><a href="women">WOMEN</a></li>
         <li><a href="kids">KIDS</a></li>
         <li><a href="handf">HOME & FURNITURE</a></li>
         <li><a href="electro">ELECTRONICS</a></li>
 </ul>
-
-<!-- Product Display -->
-
+<hr>
 <div class="container">
 	<div  class="row text-center text-lg-left">
 	<c:forEach items="${productList}" var="product">
 		<div class="col-md-3 col-sm-4 col-xs-12">
 			<a href="<c:url value="/totalProductDisplay/${product.productId}"/>" class="d-block mb-4 h-100">
-			<img class="img-fluid img-thumbnail" src="<c:url value="/resources/images/${product.productId}.jpg"/>" />
-			<p>Price :${product.price}</p>
-			<p>Stock :${product.stock}</p>
+			<img class="img-fluid img-thumbnail" id="img" src="<c:url value="/resources/images/${product.productId}.jpg"/>" style:"width="100" height="100""/>
+			<table>
+			      <tr><div align="center">${product.productDesc}</div></tr>
+			      <tr><div align="center">Price :${product.price}</div></tr>
+			      <tr><div align="center">Stock :${product.stock}</div></tr>
+			</table>
 			</a>
 		</div>
 	</c:forEach>
 	</div>
 </div>
+
      
 <!--Bootstrap JS CDN-->
 

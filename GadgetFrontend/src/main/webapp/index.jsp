@@ -7,7 +7,7 @@
    <body>
            <h3 align="center">Main Page</h3>
            
-           <jsp:forward page="/WEB-INF/views/Homepage.jsp"></jsp:forward>
+           <jsp:forward page="/WEB-INF/views/sample.jsp"></jsp:forward>
       <!--  <a href="<c:url value="/login" ></c:url>"> Login </a>
         <a href="<c:url value="/register" ></c:url>"> Register </a>
         <a href="<c:url value="/contactUs" ></c:url>"> ContactUs </a> --> 

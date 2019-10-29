@@ -146,6 +146,18 @@ public class ProductController
 		return "ProductDisplay";
 	}
 	
+	@RequestMapping(value = "/home")
+		public String index(Model m)
+		{
+			List<Product> productList=productDAO.listProducts();
+			m.addAttribute("productList", productList);
+			
+			List<Category> categoryList=categoryDAO.listCategories();
+			m.addAttribute("categoryList",this.getCategoryList(categoryList));
+			
+	      return "Homepage";
+	   }
+	
 	
 	@RequestMapping(value="/totalProductDisplay/{productId}")
 	public String totalProductDisplay(@PathVariable("productId")int productId,Model m)
