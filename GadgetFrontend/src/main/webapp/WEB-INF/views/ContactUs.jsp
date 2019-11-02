@@ -1,11 +1,12 @@
 <%@include file="CommonHeader.jsp" %>
 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/contactus.css"/>
+ 
  <div align="center">
  <div class="contact-form">
             <div class="contact-image">
                 <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
             </div>
-            <form method="post">
+                  <form action="<c:url value="/insertrequest"/>" method="post">
                 <h3>Drop Us a Message</h3>
                <div class="row">
                     <div class="col-md-6">

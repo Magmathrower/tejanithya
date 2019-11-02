@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.ecomm.model.Cart;
 import com.ecomm.model.Category;
+import com.ecomm.model.Contactus;
 import com.ecomm.model.OrderDetail;
 import com.ecomm.model.Product;
 import com.ecomm.model.Supplier;
@@ -31,7 +32,7 @@ public class DBConfig
 	{
 		DriverManagerDataSource dataSource=new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/sheandme");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/sheandmepart2");
 		dataSource.setUsername("rahul");
 		dataSource.setPassword("legend");
 		
@@ -57,6 +58,7 @@ public class DBConfig
 		factory.addAnnotatedClass(UserDetail.class);
 		factory.addAnnotatedClass(Cart.class);
 		factory.addAnnotatedClass(OrderDetail.class);
+		factory.addAnnotatedClass(Contactus.class);
 		
 		SessionFactory sessionFactory=factory.buildSessionFactory();
 		System.out.println("==============SessionFactory Object Created=============");

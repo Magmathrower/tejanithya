@@ -21,13 +21,15 @@
      <li><img src='<c:url value="/resources/images/logo_transparent.png"></c:url>' alt="Logo" height=200 width=300> </li> 
 
     <li class="active"><a href="home">Home</a></li>
+
     <c:if test="${!sessionScope.loggedIn}">	
       		<li><a href="login">Login</a></li>
       		<li><a href="register">Register</a></li>
-      		<li><a href="contactUs">Contact Us</a></li>
+      		<li><a href="contactus">Contact Us</a></li>
     </c:if>
     <c:if test="${sessionScope.loggedIn}">
     	<c:if test="${sessionScope.role=='ROLE_ADMIN'}">
+      		<li><a href="requests">Queries</a><li>
       		<li><a href="category">Manage Category</a></li>
       		<li><a href="product">Manage Product</a></li>
       	</c:if>
@@ -36,6 +38,7 @@
     	<c:if test="${sessionScope.role=='ROLE_USER'}">
       		<li><a href="productdisplay">Product </a></li>
       		<li><a href="cart">Cart</a></li>
+      		<li><a href="contactus">Contact Us</a></li>
       	</c:if>
     </c:if>
      <span class="nav navbar-nav navbar-right">

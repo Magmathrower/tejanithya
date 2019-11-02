@@ -146,19 +146,6 @@ public class ProductController
 		return "ProductDisplay";
 	}
 	
-	@RequestMapping(value = "/home")
-		public String index(Model m)
-		{
-			List<Product> productList=productDAO.listProducts();
-			m.addAttribute("productList", productList);
-			
-			List<Category> categoryList=categoryDAO.listCategories();
-			m.addAttribute("categoryList",this.getCategoryList(categoryList));
-			
-	      return "Homepage";
-	   }
-	
-	
 	@RequestMapping(value="/totalProductDisplay/{productId}")
 	public String totalProductDisplay(@PathVariable("productId")int productId,Model m)
 	{
@@ -169,6 +156,74 @@ public class ProductController
 		m.addAttribute("categoryList",this.getCategoryList(categoryList));
 		
 		return "TotalProductDisplay";
+	}
+	
+	@RequestMapping(value ="/home")
+	public String index(Model m)
+	{
+		List<Product> productList=productDAO.listProducts();
+		m.addAttribute("productList", productList);
+		
+		List<Category> categoryList=categoryDAO.listCategories();
+		m.addAttribute("categoryList",this.getCategoryList(categoryList));
+		
+      return "Homepage";
+   }
+	
+	
+	@RequestMapping(value="/women")
+	public String showwomenPage(Model m)
+	{
+		List<Product> productList=productDAO.listProductsCategoryWise(2);
+		m.addAttribute("productList", productList);
+		
+		List<Category> categoryList=categoryDAO.listCategories();
+		m.addAttribute("categoryList",this.getCategoryList(categoryList));
+		
+		return "Women";
+	}
+	
+	@RequestMapping("/men")
+	public String showMenPage(Model m)
+	{
+		List<Product> productList=productDAO.listProductsCategoryWise(1);
+		m.addAttribute("productList", productList);
+		
+		List<Category> categoryList=categoryDAO.listCategories();
+		m.addAttribute("categoryList",this.getCategoryList(categoryList));
+		return "Men";
+	}
+	
+	@RequestMapping("/kids")
+	public String showkidsPage(Model m)
+	{
+		List<Product> productList=productDAO.listProductsCategoryWise(3);
+		m.addAttribute("productList", productList);
+		
+		List<Category> categoryList=categoryDAO.listCategories();
+		m.addAttribute("categoryList",this.getCategoryList(categoryList));
+		return "Kids";
+	}
+	
+	@RequestMapping("/handf")
+	public String showhandfPage(Model m)
+	{
+		List<Product> productList=productDAO.listProductsCategoryWise(4);
+		m.addAttribute("productList", productList);
+		
+		List<Category> categoryList=categoryDAO.listCategories();
+		m.addAttribute("categoryList",this.getCategoryList(categoryList));
+		return "Handf";
+	}
+	@RequestMapping("/electro")
+	public String showelectroPage(Model m)
+	{
+		List<Product> productList=productDAO.listProductsCategoryWise(5);
+		m.addAttribute("productList", productList);
+		
+		List<Category> categoryList=categoryDAO.listCategories();
+		m.addAttribute("categoryList",this.getCategoryList(categoryList));
+		return "Electro";
 	}
 	
 }

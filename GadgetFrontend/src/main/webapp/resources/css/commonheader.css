@@ -77,3 +77,7 @@ ul{
         float: center;
        
     }
+    
+.nav navbar-nav navbar-right{
+	float:left;
+}
