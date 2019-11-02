@@ -5,12 +5,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
 import com.ecomm.dao.ContactDAO;
+import com.ecomm.model.Category;
 import com.ecomm.model.Contactus;
 
 @Controller
@@ -33,8 +35,11 @@ public class PageController
 	}
 	
 	@RequestMapping("/requests")
-	public String showrequestsPage()
+	public String showrequestsPage(Model m)
 	{
+		List<Contactus> contactList=contactDAO.listcontacts();
+		m.addAttribute("contactList", contactList);
+		
 		return "Requests";
 	}
 	
@@ -42,6 +47,20 @@ public class PageController
 	public String contactus()
 	{
 		return "ContactUs";
+	}
+	
+	@RequestMapping("/deleterequest/{contactid}")
+	public String deleteCategory(@PathVariable("contactid")int contactId,Model m)
+	{
+		Contactus contact=contactDAO.getContactid(contactId);
+		
+		contactDAO.deleteContact(contact);
+		
+		List<Contactus> contactList=(contactDAO).listcontacts();
+		m.addAttribute("contactList", contactList);
+		
+		return "Requests";
+		
 	}
 	
 	@RequestMapping(value="/insertrequest",method=RequestMethod.POST)

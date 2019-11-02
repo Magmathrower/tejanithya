@@ -11,21 +11,21 @@
                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" required />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                            <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" required />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" required />
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" required />
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px; required"></textarea>
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ecomm.model.Category;
 import com.ecomm.model.Contactus;
 import com.ecomm.model.Product;
 
@@ -57,4 +58,11 @@ public class ContactDAOImpl implements ContactDAO
 		}
 	}
 	
+	public Contactus getContactid(int contactId)
+	{
+		Session session=sessionFactory.openSession();
+		Contactus contact=session.get(Contactus.class,contactId);
+		session.close();
+		return contact;
+	}
 }
